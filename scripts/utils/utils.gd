@@ -11,3 +11,10 @@ static func parse_time_expression(str_time):
 	else:
 		printt("时间配置错误:", str_time)
 	return 0.0
+
+# 游戏时间转为时间表达式
+static func time_to_expression(time):
+	var mm = int(time) / 60
+	var ss = int(time) % 60
+	var ms = int((time - int(time)) * 1000)
+	return str(mm,':', ss, ':', ms)
