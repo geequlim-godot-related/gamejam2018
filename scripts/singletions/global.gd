@@ -15,7 +15,12 @@ func _init():
 
 
 # 播放背景音乐
+# 停止播放传入null
 func play_background_music(stream, offset=0.0):
 	_bgm_player.stop()
 	_bgm_player.stream = stream
 	_bgm_player.play(offset)
+
+# 获取当前bgm的播放位置
+func get_background_music_position():
+	return 0 if not _bgm_player.playing else _bgm_player.get_playback_position()

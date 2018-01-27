@@ -2,7 +2,7 @@ extends Control
 const Constants = preload("../../scripts/constants.gd")
 var last_button = 0
 var level = null
-
+onready var global = get_node('/root/global')
 # 按钮按下事件
 signal action_button_pressed(btn)
 
@@ -14,7 +14,7 @@ func _ready():
 	connect("action_button_pressed", self, "on_button_pressed")
 
 func _process(delta):
-	level.process(delta, last_button)
+	level.process(global.get_background_music_position(), last_button)
 
 func _input(event):
 	last_button = 0

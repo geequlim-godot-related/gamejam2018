@@ -14,8 +14,8 @@ func start():
 	time = 0
 	global.play_background_music(bgm_stream, bgm_offset)
 
-func process(delta, last_btn):
-	time += delta
+func process(p_time, last_btn):
+	time = p_time
 	for a in actions:
 		var s = a.process(time, last_btn)
 		if s > 0:
