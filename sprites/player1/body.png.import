@@ -6,7 +6,11 @@ path="res://.import/body.png-e011eb8d0ea1641cea066d9c25cbf14e.stex"
 
 [deps]
 
+source_file="res://sprites/player1/body.png"
 source_md5="0603780d47a7ace43c0aca3e2fe43c13"
+
+dest_files=[ "res://.import/body.png-e011eb8d0ea1641cea066d9c25cbf14e.stex" ]
+dest_md5="09e1387f340c4f3b00e7955e8bc35652"
 
 [params]
 
@@ -15,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

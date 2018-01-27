@@ -6,7 +6,11 @@ path="res://.import/rigth-down.png-16562d00ef59a851a5de0d317f4dbfaa.stex"
 
 [deps]
 
+source_file="res://sprites/player1/rigth-down.png"
 source_md5="ce6e2daa0e09ec95cbdbba6a14ef0bcf"
+
+dest_files=[ "res://.import/rigth-down.png-16562d00ef59a851a5de0d317f4dbfaa.stex" ]
+dest_md5="98ef819162a9f33eb84907a285d0c1d2"
 
 [params]
 
@@ -15,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

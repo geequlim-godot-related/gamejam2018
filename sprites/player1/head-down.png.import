@@ -6,7 +6,11 @@ path="res://.import/head-down.png-c46ad10dcdbad130d735676789cb377f.stex"
 
 [deps]
 
+source_file="res://sprites/player1/head-down.png"
 source_md5="b8637ca2592f4c240a8ed3b51aca282a"
+
+dest_files=[ "res://.import/head-down.png-c46ad10dcdbad130d735676789cb377f.stex" ]
+dest_md5="257ed6f4aa0fcc6d6d34eea3bb332204"
 
 [params]
 
@@ -15,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

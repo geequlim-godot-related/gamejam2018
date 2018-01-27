@@ -6,7 +6,11 @@ path="res://.import/right-up.png-63fbee93e961a85207a62e9fb512f46b.stex"
 
 [deps]
 
+source_file="res://sprites/player1/right-up.png"
 source_md5="f00f3a8bb30ee721bdce345cfc4d2f07"
+
+dest_files=[ "res://.import/right-up.png-63fbee93e961a85207a62e9fb512f46b.stex" ]
+dest_md5="18d0e93c718ef412d3491557a1a1c39e"
 
 [params]
 
@@ -15,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
