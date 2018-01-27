@@ -15,6 +15,7 @@ func _ready():
 
 func _process(delta):
 	level.process(global.get_background_music_position(), last_button)
+	get_node("Time").set_text(String(level.time))
 
 func _input(event):
 	last_button = 0

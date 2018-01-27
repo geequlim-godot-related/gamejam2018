@@ -9,6 +9,9 @@ var time = 0
 var bgm_stream = null
 var bgm_offset = 10.0
 
+var combo = 0
+var combo_score = 10
+
 func start():
 	score = 0
 	time = 0
@@ -20,8 +23,13 @@ func process(p_time, last_btn):
 		var s = a.process(time, last_btn)
 		if s > 0:
 			# TODO: 派发加分事件
-			score += s
+			combo += 1
+			score = score + s + (combo - 1) * combo_score
+			print(time)
+			printt(s, score)
 			printt(inst2dict(a))
+		else:
+			combo = 0
 
 func load(dict):
 	self.name = dict['name']
