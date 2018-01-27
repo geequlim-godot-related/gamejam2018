@@ -9,11 +9,16 @@ var header = false
 
 # 处理事件, 返回得分
 func process(p_time, btn):
-	if not disposed:
-		if abs(p_time - time) <= ACCEPT_DURATION:
+	if not disposed and accept_button(btn):
+		var time_offset = abs(p_time - time)
+		if time_offset <= ACCEPT_DURATION:
 			disposed = true
-			return SCORE
+			return calculate_score(time_offset)
 	return 0
+	
+func calculate_score(p_time_offset):
+	# TODO: 计算得分
+	return SCORE
 
 # 检查是否接受按键事件
 func accept_button(btn):

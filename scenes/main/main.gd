@@ -1,29 +1,23 @@
 extends Control
 const Constants = preload("../../scripts/constants.gd")
-
-var time = 0
+var last_button = 0
 var level = null
 
 # 按钮按下事件
 signal action_button_pressed(btn)
 
 func _ready():
-	level = get_node("/root/global").utils.parse_level(
-		{
-			"name": "小苹果",
-			"actions": [
-				"0:5:01 L",
-				"0:10:05 R",
-				"0:15:10 RH"
-			]
-		}
-	)
+	level = preload("../../scripts/level.gd").new()
+	level.load(preload("../../assets/levels/level1.gd").DATA)
+	
+	level.start()
 	connect("action_button_pressed", self, "on_button_pressed")
 
 func _process(delta):
-	time += delta
+	level.process(delta, last_button)
 
 func _input(event):
+	last_button = 0
 	if event.is_pressed() and not event.is_echo():
 		if event.is_action("ui_left"):
 			emit_signal("action_button_pressed", Constants.btLeft)
@@ -33,8 +27,4 @@ func _input(event):
 			emit_signal("action_button_pressed", Constants.btAny)
 
 func on_button_pressed(btn):
-	for a in level.actions:
-		var score = a.process(time, btn)
-		if score > 0:
-			level.score += score
-			printt("Action trigger:", inst2dict(a))
+	last_button = btn
