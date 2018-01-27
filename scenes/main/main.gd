@@ -16,6 +16,8 @@ func _ready():
 func _process(delta):
 	level.process(global.get_background_music_position(), last_button)
 	get_node("Time").set_text(String(level.time))
+	get_node("UI/ScoreTexture/score").set_text(String(level.score))
+	get_node("UI/ComboTexture/combo").set_text(String(level.combo))
 
 func _input(event):
 	last_button = 0
