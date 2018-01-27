@@ -2,12 +2,15 @@ const Action = preload("action.gd")
 const Constants = preload("constants.gd")
 const Utils = preload("utils/utils.gd")
 
+signal add_score(addition)
+
 var name = "关卡"
 var actions = []
 var score = 0
 var time = 0
 var bgm_stream = null
 var bgm_offset = 10.0
+var combo = 0
 
 var combo = 0
 var combo_score = 10
@@ -17,19 +20,19 @@ func start():
 	time = 0
 	global.play_background_music(bgm_stream, bgm_offset)
 
-func process(p_time, last_btn):
-	time = p_time
+# 处理心跳
+func process(delta, last_btn):
+	time = global.get_background_music_position()
+	var s = 0
 	for a in actions:
-		var s = a.process(time, last_btn)
+		s = a.process(time, last_btn)
 		if s > 0:
-			# TODO: 派发加分事件
+			score += s
 			combo += 1
-			score = score + s + (combo - 1) * combo_score
-			print(time)
-			printt(s, score)
-			printt(inst2dict(a))
-		else:
-			combo = 0
+			emit_signal("add_score", s)
+			break
+	if last_btn != 0 and s == 0:
+		combo = 0
 
 func load(dict):
 	self.name = dict['name']
