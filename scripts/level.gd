@@ -1,13 +1,18 @@
 const Action = preload("action.gd")
 const Constants = preload("constants.gd")
+const Utils = preload("utils/utils.gd")
+
 var name = "关卡"
 var actions = []
 var score = 0
 var time = 0
+var bgm_stream = null
+var bgm_offset = 10.0
 
 func start():
 	score = 0
 	time = 0
+	global.play_background_music(bgm_stream, bgm_offset)
 
 func process(delta, last_btn):
 	time += delta
@@ -20,16 +25,13 @@ func process(delta, last_btn):
 
 func load(dict):
 	self.name = dict['name']
+	self.bgm_stream = load(str("res://assets/bgm/", dict['bgm']['file']))
+	self.bgm_offset = Utils.parse_time_expression(dict['bgm']['offset'])
 	for ad in dict['actions']:
 		var time_key_pair = ad.split(" ")
 		if not ad.empty() and time_key_pair.size() == 2:
 			var a = Action.new()
-			var time_parts = time_key_pair[0].split(":")
-			if time_parts.size() == 3:
-				a.time = int(time_parts[0]) * 60 + int(time_parts[1]) + int(time_parts[2]) / 1000.0
-			else:
-				printt("关卡时间配置错误:", ad)
-				continue
+			a.time = Utils.parse_time_expression(time_key_pair[0])
 			var key_part = time_key_pair[1]
 			a.header = key_part.find("H") != -1
 			if key_part.find("L") != -1:
