@@ -5,6 +5,7 @@ const SCORE = 100
 var time = 0
 var key = Constants.btAny
 var disposed = false
+var npc_disposed = false
 var header = false
 
 # 处理事件, 返回得分
@@ -14,6 +15,12 @@ func process(p_time, btn):
 		if time_offset <= ACCEPT_DURATION:
 			disposed = true
 			return calculate_score(time_offset)
+	
+	if not npc_disposed:
+		var time_offset = abs(p_time - time)
+		if time_offset <= ACCEPT_DURATION:
+			print("npc抖脚:")
+			npc_disposed = true
 	return 0
 	
 func calculate_score(p_time_offset):

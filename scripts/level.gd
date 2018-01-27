@@ -10,7 +10,6 @@ var score = 0
 var time = 0
 var bgm_stream = null
 var bgm_offset = 10.0
-var combo = 0
 
 var combo = 0
 var combo_score = 10
