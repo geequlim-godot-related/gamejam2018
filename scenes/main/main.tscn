@@ -1,54 +1,22 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://shader/color_shader.tres" type="Material" id=1]
 [ext_resource path="res://scenes/main/main.gd" type="Script" id=2]
-[ext_resource path="res://sprites/mask1.png" type="Texture" id=3]
-[ext_resource path="res://assets/bg/bg2.jpg" type="Texture" id=4]
-[ext_resource path="res://assets/bg/bg.jpg" type="Texture" id=5]
-[ext_resource path="res://sprites/white.png" type="Texture" id=6]
+[ext_resource path="res://assets/bg/bg.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/main/player/player2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/main/player/player7.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/main/player/player6.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/main/player/player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/main/player/player2.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/main/player/player3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/main/player/player3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/main/player/player5.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/main/player/player4.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/main/player/player5.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/main/player/player6.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/main/player/player7.tscn" type="PackedScene" id=13]
-[ext_resource path="res://icon.png" type="Texture" id=14]
-[ext_resource path="res://fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=15]
-[ext_resource path="res://fonts/cyrillic_pixel-7.ttf" type="DynamicFontData" id=16]
-[ext_resource path="res://fonts/Kemco Pixel Bold.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://icon.png" type="Texture" id=11]
+[ext_resource path="res://scenes/main/grey.tscn" type="PackedScene" id=12]
+[ext_resource path="res://fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://fonts/cyrillic_pixel-7.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://fonts/Kemco Pixel Bold.ttf" type="DynamicFontData" id=15]
 
-[sub_resource type="Shader" id=9]
-
-code = "shader_type canvas_item;
-
-uniform float cutoff;
-uniform sampler2D mask;
-uniform sampler2D t_1;
-uniform sampler2D t_2;
-
-uniform vec4 color : hint_color;
-
-void fragment(){
-	if ( texture(mask,UV).r < cutoff){
-		COLOR.rgb = texture(t_2,UV).rgb;
-	}else{
-		COLOR.rgb = texture(t_1,UV).rgb;
-	}
-}"
-
-[sub_resource type="ShaderMaterial" id=10]
-
-render_priority = 0
-shader = SubResource( 9 )
-shader_param/cutoff = 0.1
-shader_param/color = null
-shader_param/mask = ExtResource( 3 )
-shader_param/t_1 = ExtResource( 4 )
-shader_param/t_2 = ExtResource( 5 )
-_sections_unfolded = [ "shader_param" ]
-
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=3]
 
 resource_name = "block"
 length = 1.2
@@ -79,36 +47,36 @@ tracks/1/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=4]
 
 size = 40
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 15 )
+font_data = ExtResource( 13 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=5]
 
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 16 )
+font_data = ExtResource( 14 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=6]
 
 size = 250
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 15 )
+font_data = ExtResource( 13 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=7]
 
 size = 200
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 17 )
+font_data = ExtResource( 15 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=8]
@@ -116,7 +84,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 15 )
+font_data = ExtResource( 13 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="main" type="Control" index="0"]
@@ -142,7 +110,6 @@ __meta__ = {
 
 [node name="bg" type="TextureRect" parent="." index="0"]
 
-material = SubResource( 10 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -154,7 +121,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material" ]
@@ -186,16 +153,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="player" parent="." index="3" instance=ExtResource( 7 )]
+[node name="NPC" type="Control" parent="." index="3"]
 
-position = Vector2( 511.163, 335.664 )
-scale = Vector2( 3, 3 )
-_sections_unfolded = [ "Transform" ]
-is_lead = true
-score = 0
-
-[node name="NPC" type="Control" parent="." index="4"]
-
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -208,49 +168,56 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="player2" parent="NPC" index="0" instance=ExtResource( 8 )]
+[node name="左1" parent="NPC" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 280.533, 333.618 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 100
 
-[node name="player3" parent="NPC" index="1" instance=ExtResource( 9 )]
+[node name="左2" parent="NPC" index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 737.625, 339.724 )
+position = Vector2( 350.911, 336.305 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
-score = 0
+score = 300
 
-[node name="player4" parent="NPC" index="2" instance=ExtResource( 10 )]
-
-position = Vector2( 601.736, 338.349 )
-scale = Vector2( 3, 3 )
-_sections_unfolded = [ "Transform" ]
-score = 150
-
-[node name="player5" parent="NPC" index="3" instance=ExtResource( 11 )]
-
-position = Vector2( 666.839, 337.375 )
-scale = Vector2( 3, 3 )
-_sections_unfolded = [ "Transform" ]
-score = 200
-
-[node name="player6" parent="NPC" index="4" instance=ExtResource( 12 )]
+[node name="左3" parent="NPC" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 428.585, 334.162 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 250
 
-[node name="player7" parent="NPC" index="5" instance=ExtResource( 13 )]
+[node name="player" parent="NPC" index="3" instance=ExtResource( 7 )]
 
-position = Vector2( 350.911, 334.089 )
+position = Vector2( 511.163, 335.664 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
-score = 300
+score = 0
 
-[node name="block" type="Node2D" parent="." index="5"]
+[node name="右1" parent="NPC" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( 737.625, 339.724 )
+scale = Vector2( 3, 3 )
+_sections_unfolded = [ "Transform" ]
+score = 0
+
+[node name="右2" parent="NPC" index="5" instance=ExtResource( 9 )]
+
+position = Vector2( 666.839, 337.375 )
+scale = Vector2( 3, 3 )
+_sections_unfolded = [ "Transform" ]
+score = 200
+
+[node name="右3" parent="NPC" index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 601.736, 338.349 )
+scale = Vector2( 3, 3 )
+_sections_unfolded = [ "Transform" ]
+score = 150
+
+[node name="block" type="Node2D" parent="." index="4"]
 
 visible = false
 _sections_unfolded = [ "Transform" ]
@@ -258,7 +225,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite" type="Sprite" parent="block" index="0"]
 
 position = Vector2( 81.93, 634.098 )
-texture = ExtResource( 14 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="block" index="1"]
@@ -268,13 +235,16 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/block = SubResource( 11 )
+anims/block = SubResource( 3 )
 blend_times = [  ]
 autoplay = ""
 _sections_unfolded = [ "Playback Options" ]
 
+[node name="Screen" parent="." index="5" instance=ExtResource( 12 )]
+
 [node name="UI" type="Control" parent="." index="6"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -301,7 +271,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Score"
 align = 1
@@ -327,7 +297,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.069046, 0.153778, 0.707031, 1 )
 align = 1
 valign = 1
@@ -353,7 +323,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.792157, 0.47451, 0.505882, 1 )
 text = "Combo X"
 align = 1
@@ -379,7 +349,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.792969, 0.47702, 0.50664, 1 )
 text = "5"
 align = 1
