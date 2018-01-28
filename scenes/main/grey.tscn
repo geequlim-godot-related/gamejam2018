@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/mask1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/white.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=4]
+
+code = "shader_type canvas_item;
+
+uniform float cutoff;
+uniform sampler2D mask;
+
+
+void fragment(){
+	if ( texture(mask,UV).r < cutoff){
+		COLOR.rgba = texture(SCREEN_TEXTURE,SCREEN_UV).rgba;
+	}else{
+		float grey = dot(texture(SCREEN_TEXTURE,SCREEN_UV).rgb, vec3(0.299, 0.587, 0.114));
+		COLOR.rgba = vec4(grey ,grey ,grey , texture(SCREEN_TEXTURE,SCREEN_UV).a);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=5]
+
+render_priority = 0
+shader = SubResource( 4 )
+shader_param/cutoff = 0.05
+shader_param/mask = ExtResource( 1 )
+_sections_unfolded = [ "shader_param" ]
+
+[node name="Screen" type="TextureRect"]
+
+material = SubResource( 5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Material" ]
+
+
