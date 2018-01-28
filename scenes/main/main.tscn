@@ -14,7 +14,7 @@
 [ext_resource path="res://fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://fonts/cyrillic_pixel-7.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://fonts/Kemco Pixel Bold.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://assets/bg/xx.png" type="Texture" id=15]
+[ext_resource path="res://assets/bg/pdq.png" type="Texture" id=15]
 [ext_resource path="res://scenes/main/effect.gd" type="Script" id=16]
 [ext_resource path="res://scenes/main/popup.tscn" type="PackedScene" id=17]
 [ext_resource path="res://sfx/237476__ofuscapreto__laser-falling.wav" type="AudioStream" id=18]
