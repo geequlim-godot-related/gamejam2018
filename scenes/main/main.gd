@@ -1,5 +1,7 @@
 extends Control
 const Constants = preload("../../scripts/constants.gd")
+const EffectView = preload("res://scenes/main/effect.gd")
+
 var last_button = 0
 var level = null
 onready var global = get_node('/root/global')
@@ -47,13 +49,13 @@ func _on_add_score(addition):
 	# TODO: 加分表现
 	var node = get_node("UI/KeyLevel")
 	if addition >50:
-		node.set_text("perfect")
+		get_node("Effect").play_effect(EffectView.EffectLevel.Perfect)
 	elif addition >25:
-		node.set_text("very good")
-	elif addition >0:
-		node.set_text("good")
-	else:
-		node.set_text("")
+		get_node("Effect").play_effect(EffectView.EffectLevel.VeryGood)
+	elif addition >10:
+		get_node("Effect").play_effect(EffectView.EffectLevel.Good)
+	elif addition > 0:
+		get_node("Effect").play_effect(EffectView.EffectLevel.Bad)
 	if addition > 0:
 		print(level.Utils.time_to_expression(level.time), " 按下了: ", last_button, " 加分:", addition, " 总分:", level.score, ' 进度:', level.get_progress(),' 连击:', level.combo)
 		
