@@ -89,7 +89,7 @@ use_filter = false
 font_data = ExtResource( 12 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 resource_name = "play"
 length = 0.2
@@ -120,9 +120,8 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -14 ), Vector2( -16, 15 ), Vector2( -23, -8 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
-resource_name = "play"
 length = 3.0
 loop = false
 step = 0.1
@@ -490,7 +489,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/play = SubResource( 8 )
+anims/play = SubResource( 7 )
 blend_times = [  ]
 autoplay = ""
 
@@ -508,7 +507,7 @@ autoplay = "play"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/play = SubResource( 7 )
+anims/play = SubResource( 8 )
 blend_times = [  ]
 autoplay = "play"
 

@@ -16,4 +16,4 @@ func _ready():
 
 # 播放特效
 func play_effect(level):
-	pass
+	get_node("ShakeEffect").play("play")
