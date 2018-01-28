@@ -45,7 +45,7 @@ func process(p_time, btn):
 			
 	# 方块出现时机
 	if not block_disposed:
-		if abs(p_time - time) <= 1:
+		if abs(p_time - time) <= 0.6:
 			#出现方块
 			global.emit_signal("block")
 			block_disposed = true
