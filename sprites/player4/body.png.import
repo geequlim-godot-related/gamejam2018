@@ -7,10 +7,10 @@ path="res://.import/body.png-65003f84302a8518e8c2551149479c28.stex"
 [deps]
 
 source_file="res://sprites/player4/body.png"
-source_md5="dc3d2581c3c25def1be743715c0dbc3c"
+source_md5="c7279ede5d85003e0fed500c29d14452"
 
 dest_files=[ "res://.import/body.png-65003f84302a8518e8c2551149479c28.stex" ]
-dest_md5="ff68d9784d14bd54cc889aec10c1c243"
+dest_md5="d0443811556393c312046170cc87270a"
 
 [params]
 
