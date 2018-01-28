@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/head-up.png-7457e02eefe6b381e64edf96de9ec572.stex"
+path="res://.import/logo.png-374b793e6c2ad87485e73f1a95942e18.stex"
 
 [deps]
 
-source_file="res://sprites/player3/head-up.png"
-source_md5="b6cafe46a47ca2fd43c592bcb1308e63"
+source_file="res://assets/bg/logo.png"
+source_md5="67f3321699286999a2a58b22b4b28bd9"
 
-dest_files=[ "res://.import/head-up.png-7457e02eefe6b381e64edf96de9ec572.stex" ]
-dest_md5="dac5a814c11c5684b4b412f7b1af3dcc"
+dest_files=[ "res://.import/logo.png-374b793e6c2ad87485e73f1a95942e18.stex" ]
+dest_md5="ba284749e0e3414104c0ddec63753144"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
