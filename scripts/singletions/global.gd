@@ -10,6 +10,18 @@ const utils = preload("../utils/utils.gd")
 # 背景音乐播放器
 var _bgm_player = AudioStreamPlayer.new()
 
+signal npc_left
+signal npc_right
+signal npc_head
+
+signal lead_left
+signal lead_right
+signal lead_head
+
+signal clear_key_level
+
+signal block
+
 func _init():
 	add_child(_bgm_player)
 

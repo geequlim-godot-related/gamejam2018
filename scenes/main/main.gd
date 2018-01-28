@@ -11,6 +11,8 @@ func _ready():
 	level.load(preload("../../assets/levels/level1.gd").DATA)
 	level.connect("add_score", self, "_on_add_score")
 	level.start()
+	global.connect("clear_key_level", self, "_on_add_score", [0])
+	global.connect("block", self, "show_block")
 	connect("action_button_pressed", self, "on_button_pressed")
 
 func _process(delta):
@@ -35,4 +37,26 @@ func on_button_pressed(btn):
 # 加分表现，逻辑分数已经结算，这里只需做出表现即可
 func _on_add_score(addition):
 	# TODO: 加分表现
-	print(level.Utils.time_to_expression(level.time), " 按下了: ", last_button, " 加分:", addition, " 总分:", level.score, ' 连击:', level.combo)
+	var node = get_node("UI/KeyLevel")
+	if addition >50:
+		node.set_text("perfect")
+	elif addition >25:
+		node.set_text("very good")
+	elif addition >0:
+		node.set_text("good")
+	else:
+		node.set_text("")
+	if addition > 0:
+		print(level.Utils.time_to_expression(level.time), " 按下了: ", last_button, " 加分:", addition, " 总分:", level.score, ' 连击:', level.combo)
+		
+func show_block():
+	var block = get_node("block").duplicate()
+	add_child(block)
+	block.show()
+	block.get_node("AnimationPlayer").play("block")
+	block.get_node("AnimationPlayer").connect("animation_finished", self, "free_block", [block])
+	
+func free_block(animation ,block):
+	remove_child(block)
+	block.free()
+	
