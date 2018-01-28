@@ -52,7 +52,7 @@ func _on_add_score(addition):
 	else:
 		node.set_text("")
 	if addition > 0:
-		print(level.Utils.time_to_expression(level.time), " 按下了: ", last_button, " 加分:", addition, " 总分:", level.score, ' 连击:', level.combo)
+		print(level.Utils.time_to_expression(level.time), " 按下了: ", last_button, " 加分:", addition, " 总分:", level.score, ' 进度:', level.get_progress(),' 连击:', level.combo)
 		
 func show_block():
 	var block = get_node("block").duplicate()

@@ -52,7 +52,6 @@ func process(p_time, btn):
 	return 0
 	
 func calculate_score(p_time_offset):
-	# TODO: 计算得分
 	if p_time_offset <= 0.02:
 		return SCORE
 	elif p_time_offset <= 0.06:
