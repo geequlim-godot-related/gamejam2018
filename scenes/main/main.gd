@@ -52,6 +52,7 @@ func _on_add_score(addition):
 	else:
 		node.set_text("")
 	if addition > 0:
+		get_node("Screen").material.set_shader_param("cutoff", level.get_progress())
 		print(level.Utils.time_to_expression(level.time), " 按下了: ", last_button, " 加分:", addition, " 总分:", level.score, ' 进度:', level.get_progress(),' 连击:', level.combo)
 		
 func show_block():
