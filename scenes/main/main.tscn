@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://shader/color_shader.tres" type="Material" id=1]
 [ext_resource path="res://scenes/main/main.gd" type="Script" id=2]
@@ -16,7 +16,8 @@
 [ext_resource path="res://fonts/Kemco Pixel Bold.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://assets/bg/xx.png" type="Texture" id=15]
 [ext_resource path="res://scenes/main/effect.gd" type="Script" id=16]
-[ext_resource path="res://sfx/237476__ofuscapreto__laser-falling.wav" type="AudioStream" id=17]
+[ext_resource path="res://scenes/main/popup.tscn" type="PackedScene" id=17]
+[ext_resource path="res://sfx/237476__ofuscapreto__laser-falling.wav" type="AudioStream" id=18]
 
 [sub_resource type="Animation" id=1]
 
@@ -34,7 +35,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 90.9446, -33.2592 ), Vector2( 90.9446, 482 ), Vector2( 90.9446, 636 ) ]
+"values": [ Vector2( 90.9446, -33.2592 ), Vector2( 90.9446, 577 ), Vector2( 90.9446, 755 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:rotation_degrees")
@@ -257,14 +258,13 @@ score = 0.5
 
 [node name="右1" parent="players" index="6" instance=ExtResource( 10 )]
 
-position = Vector2( 760.527, 339.724 )
+position = Vector2( 737.625, 339.724 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 0.7
 
 [node name="block" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
 visible = false
 _sections_unfolded = [ "Transform" ]
 
@@ -437,6 +437,7 @@ _sections_unfolded = [ "BBCode", "custom_colors", "custom_fonts" ]
 
 [node name="Restart" type="Button" parent="UI" index="3"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -466,9 +467,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -1.0
-margin_top = 477.0
-margin_right = 201.0
-margin_bottom = 487.0
+margin_top = 572.0
+margin_right = 245.0
+margin_bottom = 582.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -504,6 +505,8 @@ anims/play = SubResource( 7 )
 blend_times = [  ]
 autoplay = ""
 
+[node name="Control" parent="Effect" index="1" instance=ExtResource( 17 )]
+
 [node name="start_trigger" type="Timer" parent="." index="6"]
 
 editor/display_folded = true
@@ -525,7 +528,7 @@ autoplay = "play"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="start_trigger" index="1"]
 
-stream = ExtResource( 17 )
+stream = ExtResource( 18 )
 volume_db = 0.0
 autoplay = true
 max_distance = 2000.0
