@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/237476__ofuscapreto__laser-falling.wav-58f5720459674e23facc712c53e89f30.sample"
+
+[deps]
+
+source_file="res://sfx/237476__ofuscapreto__laser-falling.wav"
+source_md5="dc3ad5c2e285d50dbce6e283c50983a5"
+
+dest_files=[ "res://.import/237476__ofuscapreto__laser-falling.wav-58f5720459674e23facc712c53e89f30.sample" ]
+dest_md5="01c277a3d436c4f3eaefa47f1e0d9d8b"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

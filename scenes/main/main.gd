@@ -23,6 +23,10 @@ func _ready():
 func on_start():
 	level.start()
 
+# 开始关卡
+func on_start():
+	level.start()
+
 func _process(delta):
 	level.process(delta, last_button)
 	get_node("Time").set_text(String(level.time))
