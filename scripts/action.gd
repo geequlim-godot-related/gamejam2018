@@ -7,12 +7,14 @@ var key = Constants.btAny
 var disposed = false
 var npc_disposed = false
 var block_disposed = false
+var combo_disposed = false
 var header = false
 
 func init_var():
-	var disposed = false
-	var npc_disposed = false
-	var block_disposed = false
+	disposed = false
+	npc_disposed = false
+	block_disposed = false
+	combo_disposed = false
 	
 # 处理事件, 返回得分
 func process(p_time, btn):
@@ -27,6 +29,10 @@ func process(p_time, btn):
 				global.emit_signal("lead_head")
 			disposed = true
 			return calculate_score(time_offset)
+	elif not disposed && combo_disposed == false:
+		if p_time - time > ACCEPT_DURATION:
+			global.emit_signal("combo_disposed")
+			combo_disposed = true
 	elif accept_button(btn):
 		# 如果按过再按
 		global.emit_signal("clear_key_level")

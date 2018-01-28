@@ -15,12 +15,15 @@ func _ready():
 	global.connect("clear_key_level", self, "_on_add_score", [0])
 	global.connect("block", self, "show_block")
 	global.connect("finished", self, "_on_finished")
+	global.connect("combo_disposed", self, "combo_disposed")
 	connect("action_button_pressed", self, "on_button_pressed")
 	get_node("UI/Restart").connect("pressed", level, "restart")
+	
 
 # 开始关卡
 func on_start():
 	level.start()
+
 
 func _process(delta):
 	level.process(delta, last_button)
@@ -74,3 +77,5 @@ func free_block(animation ,block):
 	remove_child(block)
 	block.free()
 	
+func combo_disposed():
+	level.combo = 0
