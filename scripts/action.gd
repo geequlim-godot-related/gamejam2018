@@ -1,5 +1,5 @@
 const Constants = preload("./constants.gd")
-const ACCEPT_DURATION = 0.1#0.833
+const ACCEPT_DURATION = 0.333
 const SCORE = 100
 
 var time = 0
@@ -45,7 +45,7 @@ func process(p_time, btn):
 			
 	# 方块出现时机
 	if not block_disposed:
-		if abs(p_time - time) <= 1:
+		if abs(p_time - time) <= 0.6:
 			#出现方块
 			global.emit_signal("block")
 			block_disposed = true
