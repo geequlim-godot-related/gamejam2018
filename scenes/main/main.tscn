@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://shader/color_shader.tres" type="Material" id=1]
 [ext_resource path="res://scenes/main/main.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=14]
 [ext_resource path="res://fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://fonts/cyrillic_pixel-7.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://fonts/Kemco Pixel Bold.ttf" type="DynamicFontData" id=17]
 
 [sub_resource type="Shader" id=9]
 
@@ -101,6 +102,14 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 15 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=15]
+
+size = 200
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 17 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=8]
 
@@ -237,6 +246,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="block" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="block" index="0"]
@@ -322,7 +332,6 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="ComboTexture" type="Label" parent="UI" index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -363,6 +372,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.792969, 0.47702, 0.50664, 1 )
 text = "5"
 align = 1
