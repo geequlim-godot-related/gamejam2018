@@ -20,4 +20,12 @@ func play_effect(level):
 	#get_node("ShakeEffect").play("play")
 	var pop = popupscene.instance()
 	add_child(pop)
-	pop.set_texture("res://icon.png")
+	match level:
+		Perfect:
+			pop.set_texture("res://scenes/main/1.png")
+		VeryGood:
+			pop.set_texture("res://scenes/main/2.png")
+		Good:
+			pop.set_texture("res://scenes/main/3.png")
+		Bad:
+			pop.set_texture("res://scenes/main/5.png")
