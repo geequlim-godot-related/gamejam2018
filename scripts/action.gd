@@ -1,5 +1,5 @@
 const Constants = preload("./constants.gd")
-const ACCEPT_DURATION = 0.1#0.833
+const ACCEPT_DURATION = 0.333
 const SCORE = 100
 
 var time = 0

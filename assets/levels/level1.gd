@@ -1,7 +1,7 @@
 const DATA = {
     "bgm": {
         "file": "Chip Trip.ogg",
-        "offset": "0:8:000"
+        "offset": "0:0:000"
     },
     "name": "Chip Trip",
     "actions": [
