@@ -16,6 +16,7 @@ func _ready():
 	global.connect("block", self, "show_block")
 	global.connect("finished", self, "_on_finished")
 	global.connect("combo_disposed", self, "combo_disposed")
+	global.set_level(level)
 	connect("action_button_pressed", self, "on_button_pressed")
 	get_node("UI/Restart").connect("pressed", level, "restart")
 	
@@ -64,7 +65,7 @@ func _on_add_score(addition):
 		print(level.Utils.time_to_expression(level.time), " 按下了: ", last_button, " 加分:", addition, " 总分:", level.score, ' 进度:', level.get_progress(),' 连击:', level.combo)
 
 func _on_finished():
-	print("game over", level)
+	get_tree().change_scene("res://scenes/main/GameOver.tscn")
 
 func show_block():
 	var block = get_node("block").duplicate()
