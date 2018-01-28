@@ -10,7 +10,7 @@ source_file="res://assets/bg/ads.png"
 source_md5="2601a7e363d21f0bd8e50b8852f52b8e"
 
 dest_files=[ "res://.import/ads.png-3985889c39ec8c2c8ee6146a7430d332.stex" ]
-dest_md5="93ae15544487aa3cf1302aee2026642c"
+dest_md5="4f30889d220594382a57b0cf389b3990"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -10,7 +10,7 @@ source_file="res://scenes/main/5.png"
 source_md5="cacd47270b5e03a120a37964da1e5401"
 
 dest_files=[ "res://.import/5.png-84ebf65873f27894d6f9b17110515482.stex" ]
-dest_md5="ad867c23ea0b7b8a8cc4bc0509316b95"
+dest_md5="302645d6a1f8a8d6121edbfa0718d222"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
