@@ -7,10 +7,10 @@ path="res://.import/mask2.png-5dbc29db5c0105f81fca3b83dc21f468.stex"
 [deps]
 
 source_file="res://sprites/mask2.png"
-source_md5="80fced32fb506616040af01f6ac0a8f6"
+source_md5="20335d0acc593aeba843956466e38558"
 
 dest_files=[ "res://.import/mask2.png-5dbc29db5c0105f81fca3b83dc21f468.stex" ]
-dest_md5="9f2330c865a43ca4e13abe26e9278eee"
+dest_md5="bbac5cac460b671ddae2fccf6b94e62e"
 
 [params]
 
