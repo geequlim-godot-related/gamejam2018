@@ -10,11 +10,14 @@ func _ready():
 	level = preload("../../scripts/level.gd").new()
 	level.load(preload("../../assets/levels/level1.gd").DATA)
 	level.connect("add_score", self, "_on_add_score")
-	level.start()
 	global.connect("clear_key_level", self, "_on_add_score", [0])
 	global.connect("block", self, "show_block")
 	connect("action_button_pressed", self, "on_button_pressed")
 	get_node("UI/Restart").connect("pressed", level, "restart")
+
+# 开始关卡
+func on_start():
+	level.start()
 
 func _process(delta):
 	level.process(delta, last_button)
@@ -52,7 +55,6 @@ func _on_add_score(addition):
 	else:
 		node.set_text("")
 	if addition > 0:
-		get_node("Screen").material.set_shader_param("cutoff", level.get_progress())
 		print(level.Utils.time_to_expression(level.time), " 按下了: ", last_button, " 加分:", addition, " 总分:", level.score, ' 进度:', level.get_progress(),' 连击:', level.combo)
 		
 func show_block():
