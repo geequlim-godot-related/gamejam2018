@@ -25,6 +25,13 @@ signal finished
 
 signal block
 
+var _cur_level = null
+func get_level():
+	return _cur_level
+func set_level(lv):
+	_cur_level = lv
+
+
 func _init():
 	_bgm_player.connect("finished", self, "emit_signal", ["finished"])
 	add_child(_bgm_player)

@@ -49,6 +49,8 @@ func process(delta, last_btn):
 func load(dict):
 	self.name = dict['name']
 	self.bgm_stream = load(str("res://assets/bgm/", dict['bgm']['file']))
+	if self.bgm_stream != null:
+		bgm_stream.loop = false
 	self.bgm_offset = Utils.parse_time_expression(dict['bgm']['offset'])
 	for ad in dict['actions']:
 		var time_key_pair = ad.split(" ")
