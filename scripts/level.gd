@@ -39,7 +39,7 @@ func process(delta, last_btn):
 	for a in actions:
 		s = a.process(time, last_btn)
 		if s > 0:
-			score += s
+			score = score + s + combo_score*combo
 			combo += 1
 			emit_signal("add_score", s)
 			break

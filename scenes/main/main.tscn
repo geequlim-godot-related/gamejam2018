@@ -137,7 +137,7 @@ size_flags_vertical = 1
 script = ExtResource( 2 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "Material", "Mouse", "Pause", "Rect", "Size Flags", "Theme", "Visibility" ]
 __meta__ = {
-"_edit_horizontal_guides_": [ 472.399 ]
+"_edit_horizontal_guides_": [ 538.538 ]
 }
 
 [node name="bg" type="TextureRect" parent="." index="0"]
@@ -188,14 +188,14 @@ max_lines_visible = -1
 
 [node name="player" parent="." index="3" instance=ExtResource( 7 )]
 
-position = Vector2( 274.21, 335.664 )
+position = Vector2( 511.163, 335.664 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 is_lead = true
+score = 0
 
 [node name="NPC" type="Control" parent="." index="4"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -210,43 +210,49 @@ size_flags_vertical = 1
 
 [node name="player2" parent="NPC" index="0" instance=ExtResource( 8 )]
 
-position = Vector2( 743.39, 340.984 )
+position = Vector2( 280.533, 333.618 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 100
 
 [node name="player3" parent="NPC" index="1" instance=ExtResource( 9 )]
 
-position = Vector2( 363.165, 333.585 )
+position = Vector2( 737.625, 339.724 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 0
 
 [node name="player4" parent="NPC" index="2" instance=ExtResource( 10 )]
 
-position = Vector2( 444.586, 339.577 )
+position = Vector2( 601.736, 338.349 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 150
 
 [node name="player5" parent="NPC" index="3" instance=ExtResource( 11 )]
 
-position = Vector2( 663.156, 341.058 )
+position = Vector2( 666.839, 337.375 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 200
 
 [node name="player6" parent="NPC" index="4" instance=ExtResource( 12 )]
 
-position = Vector2( 520.665, 336.618 )
+position = Vector2( 428.585, 334.162 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 250
 
 [node name="player7" parent="NPC" index="5" instance=ExtResource( 13 )]
 
-position = Vector2( 591.548, 339 )
+position = Vector2( 350.911, 334.089 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 300
 
 [node name="block" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
+visible = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="block" index="0"]
@@ -332,6 +338,7 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="ComboTexture" type="Label" parent="UI" index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
