@@ -13,6 +13,8 @@ var bgm_offset = 10.0
 
 var combo = 0
 var combo_score = 10
+# 最大得分
+var _max_score  = 0
 
 func start():
 	score = 0
@@ -25,7 +27,11 @@ func restart():
 	score = 0
 	time = 0
 	global.play_background_music(bgm_stream, bgm_offset)
-	
+
+# 游戏进度
+func get_progress():
+	return float(score) / (float(_max_score) * 0.7)+ 0.1
+
 # 处理心跳
 func process(delta, last_btn):
 	time = global.get_background_music_position()
@@ -58,6 +64,7 @@ func load(dict):
 			else:
 				printt("关卡按键配置错误：", ad)
 				continue
+			self._max_score += a.SCORE
 			self.actions.append(a)
 		else:
 			printt("关卡配置错误：", ad)
