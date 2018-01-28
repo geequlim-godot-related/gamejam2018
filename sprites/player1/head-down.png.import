@@ -7,10 +7,10 @@ path="res://.import/head-down.png-c46ad10dcdbad130d735676789cb377f.stex"
 [deps]
 
 source_file="res://sprites/player1/head-down.png"
-source_md5="d649cc7091e6be395c255be593ef7b42"
+source_md5="b4be4d6642314bc249ab0e0957dfa0ba"
 
 dest_files=[ "res://.import/head-down.png-c46ad10dcdbad130d735676789cb377f.stex" ]
-dest_md5="057719672bb81c73dd3ac9b39dc10c83"
+dest_md5="c099ff9784faac45ecfc001207c7776c"
 
 [params]
 

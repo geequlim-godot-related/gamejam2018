@@ -7,10 +7,10 @@ path="res://.import/left-down.png-45a2ccb7322b8ec010b0ad3fcf34d070.stex"
 [deps]
 
 source_file="res://sprites/player1/left-down.png"
-source_md5="3e2811108fd3aabc302882664272106a"
+source_md5="42ea75c28b9d635eeb1c948145ec2b96"
 
 dest_files=[ "res://.import/left-down.png-45a2ccb7322b8ec010b0ad3fcf34d070.stex" ]
-dest_md5="633948dbe727c4b042d7963f9a4f5828"
+dest_md5="aa34b59391bed2d5aef10bc310e19cf5"
 
 [params]
 

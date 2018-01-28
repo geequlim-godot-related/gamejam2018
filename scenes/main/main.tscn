@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://shader/color_shader.tres" type="Material" id=1]
 [ext_resource path="res://scenes/main/main.gd" type="Script" id=2]
@@ -16,8 +16,7 @@
 [ext_resource path="res://fonts/Kemco Pixel Bold.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://assets/bg/xx.png" type="Texture" id=15]
 [ext_resource path="res://scenes/main/effect.gd" type="Script" id=16]
-[ext_resource path="res://scenes/main/popup.tscn" type="PackedScene" id=17]
-[ext_resource path="res://sfx/237476__ofuscapreto__laser-falling.wav" type="AudioStream" id=18]
+[ext_resource path="res://sfx/237476__ofuscapreto__laser-falling.wav" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=1]
 
@@ -258,7 +257,7 @@ score = 0.5
 
 [node name="右1" parent="players" index="6" instance=ExtResource( 10 )]
 
-position = Vector2( 737.625, 339.724 )
+position = Vector2( 760.527, 339.724 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 0.7
@@ -505,8 +504,6 @@ anims/play = SubResource( 7 )
 blend_times = [  ]
 autoplay = ""
 
-[node name="Control" parent="Effect" index="1" instance=ExtResource( 17 )]
-
 [node name="start_trigger" type="Timer" parent="." index="6"]
 
 editor/display_folded = true
@@ -528,7 +525,7 @@ autoplay = "play"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="start_trigger" index="1"]
 
-stream = ExtResource( 18 )
+stream = ExtResource( 17 )
 volume_db = 0.0
 autoplay = true
 max_distance = 2000.0
