@@ -19,6 +19,13 @@ func start():
 	time = 0
 	global.play_background_music(bgm_stream, bgm_offset)
 
+func restart():
+	for a in actions:
+		a.init_var()
+	score = 0
+	time = 0
+	global.play_background_music(bgm_stream, bgm_offset)
+	
 # 处理心跳
 func process(delta, last_btn):
 	time = global.get_background_music_position()

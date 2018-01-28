@@ -14,11 +14,16 @@ func _ready():
 	global.connect("clear_key_level", self, "_on_add_score", [0])
 	global.connect("block", self, "show_block")
 	connect("action_button_pressed", self, "on_button_pressed")
+	get_node("UI/Restart").connect("pressed", level, "restart")
 
 func _process(delta):
 	level.process(delta, last_button)
 	get_node("Time").set_text(String(level.time))
 	get_node("UI/ScoreTexture/score").set_text(String(level.score))
+	if level.combo >= 1:
+		get_node("UI/ComboTexture").show()
+	else:
+		get_node("UI/ComboTexture").hide()
 	get_node("UI/ComboTexture/combo").set_text(String(level.combo))
 	last_button = 0
 	
