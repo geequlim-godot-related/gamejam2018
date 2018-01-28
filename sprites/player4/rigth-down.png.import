@@ -7,10 +7,10 @@ path="res://.import/rigth-down.png-6b2fbcfa066d8388effabca03219bce1.stex"
 [deps]
 
 source_file="res://sprites/player4/rigth-down.png"
-source_md5="2e11e6449fa52bc9181f491bb3222e88"
+source_md5="fed91404a96071c00d713d1d5a6228b8"
 
 dest_files=[ "res://.import/rigth-down.png-6b2fbcfa066d8388effabca03219bce1.stex" ]
-dest_md5="0c75b9f29b49a44179bb8d7b25a7faa4"
+dest_md5="ba099f477cd3ac1202f37776fd722406"
 
 [params]
 

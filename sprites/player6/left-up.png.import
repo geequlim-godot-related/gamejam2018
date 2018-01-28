@@ -7,10 +7,10 @@ path="res://.import/left-up.png-bbecf24a186f23429bfbb17e5cb09c2b.stex"
 [deps]
 
 source_file="res://sprites/player6/left-up.png"
-source_md5="100e8f4eae83fb61139266cbe1caa055"
+source_md5="51939a4198ec9241aedeabe05166e875"
 
 dest_files=[ "res://.import/left-up.png-bbecf24a186f23429bfbb17e5cb09c2b.stex" ]
-dest_md5="70942703e589f34b5997a1a651310b96"
+dest_md5="bb9d34e6f4ba04a58b099583f481110c"
 
 [params]
 

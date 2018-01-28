@@ -7,10 +7,10 @@ path="res://.import/right-up.png-d48e368f9dfa7ce65c830a0fffa7f25a.stex"
 [deps]
 
 source_file="res://sprites/player3/right-up.png"
-source_md5="c1fd352558c837ecf48741a7469b0bc2"
+source_md5="4e5ecb24fbff30ec446ef38c6d614148"
 
 dest_files=[ "res://.import/right-up.png-d48e368f9dfa7ce65c830a0fffa7f25a.stex" ]
-dest_md5="f985776816c0e2f8bb63f1e698c33606"
+dest_md5="29d167911b5a62741b5eadc7be724ac5"
 
 [params]
 

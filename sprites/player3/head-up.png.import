@@ -7,10 +7,10 @@ path="res://.import/head-up.png-7457e02eefe6b381e64edf96de9ec572.stex"
 [deps]
 
 source_file="res://sprites/player3/head-up.png"
-source_md5="4e6167c67a39070dd740300a5061bf5d"
+source_md5="f2799664dcbbf36ddfdcfd989172fce6"
 
 dest_files=[ "res://.import/head-up.png-7457e02eefe6b381e64edf96de9ec572.stex" ]
-dest_md5="b7aa97bf15cd1c865bee88c1d31db0bb"
+dest_md5="1bd60cb5759c9380be1321e5795aac4a"
 
 [params]
 
