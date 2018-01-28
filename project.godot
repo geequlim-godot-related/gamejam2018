@@ -22,12 +22,6 @@ global="*res://scripts/singletions/global.gd"
 
 settings/fps/force_fps=60
 
-[display]
-
-window/size/width=1280
-window/size/height=720
-window/size/resizable=false
-
 [rendering]
 
 quality/intended_usage/framebuffer_allocation=0
