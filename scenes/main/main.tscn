@@ -192,10 +192,10 @@ position = Vector2( 274.21, 335.664 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 is_lead = true
+score = 0
 
 [node name="NPC" type="Control" parent="." index="4"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -213,40 +213,47 @@ size_flags_vertical = 1
 position = Vector2( 743.39, 340.984 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 100
 
 [node name="player3" parent="NPC" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 363.165, 333.585 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 0
 
 [node name="player4" parent="NPC" index="2" instance=ExtResource( 10 )]
 
 position = Vector2( 444.586, 339.577 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 150
 
 [node name="player5" parent="NPC" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 663.156, 341.058 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 200
 
 [node name="player6" parent="NPC" index="4" instance=ExtResource( 12 )]
 
 position = Vector2( 520.665, 336.618 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 250
 
 [node name="player7" parent="NPC" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 591.548, 339 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
+score = 300
 
 [node name="block" type="Node2D" parent="." index="5"]
 
 editor/display_folded = true
+visible = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="block" index="0"]
@@ -269,6 +276,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="UI" type="Control" parent="." index="6"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -332,6 +340,7 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="ComboTexture" type="Label" parent="UI" index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0

@@ -3,6 +3,8 @@ extends Node2D
 onready var global = get_node('/root/global')
 
 export var is_lead = false
+export var score = 0
+var speed = 5
 
 func _ready():
 	if !is_lead:
@@ -21,13 +23,20 @@ func process_action(act):
     pass
 
 func play_left():
-	get_node("l_leg_player").playback_speed = 5
+	if is_lead == false and get_node('/root/main').level.score < score:
+		return
+	get_node("l_leg_player").playback_speed = speed
 	get_node("l_leg_player").play("play")
+		
 	
 func play_right():
-	get_node("r_leg_player").playback_speed = 5
+	if is_lead == false and get_node('/root/main').level.score < score:
+		return
+	get_node("r_leg_player").playback_speed = speed
 	get_node("r_leg_player").play("play")
 	
 func play_head():
-	get_node("head_player").playback_speed = 5
+	if is_lead == false and get_node('/root/main').level.score < score:
+		return
+	get_node("head_player").playback_speed = speed
 	get_node("head_player").play("play")
