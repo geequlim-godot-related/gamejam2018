@@ -9,6 +9,11 @@ var npc_disposed = false
 var block_disposed = false
 var header = false
 
+func init_var():
+	var disposed = false
+	var npc_disposed = false
+	var block_disposed = false
+	
 # 处理事件, 返回得分
 func process(p_time, btn):
 	if not disposed and accept_button(btn):
