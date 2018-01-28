@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://shader/color_shader.tres" type="Material" id=1]
 [ext_resource path="res://scenes/main/main.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://fonts/Kemco Pixel Bold.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://assets/bg/xx.png" type="Texture" id=15]
 [ext_resource path="res://scenes/main/effect.tscn" type="PackedScene" id=16]
+[ext_resource path="res://sfx/237476__ofuscapreto__laser-falling.wav" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=1]
 
@@ -50,7 +51,7 @@ tracks/1/keys = {
 
 [sub_resource type="DynamicFont" id=2]
 
-size = 60
+size = 40
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 12 )
@@ -88,6 +89,25 @@ use_filter = false
 font_data = ExtResource( 12 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="Animation" id=7]
+
+resource_name = "play"
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("../bg:material:shader_param/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.01 ]
+}
+
 [node name="main" type="Control" index="0"]
 
 pause_mode = 1
@@ -111,10 +131,13 @@ __meta__ = {
 
 [node name="bg" type="TextureRect" parent="." index="0"]
 
+material = ExtResource( 1 )
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -151,20 +174,13 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 38.0
-margin_top = 6.0
-margin_right = 940.0
-margin_bottom = 512.0
-rect_scale = Vector2( 1.2, 1.2 )
+margin_right = 40.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="左1" parent="players" index="0" instance=ExtResource( 4 )]
 
@@ -240,6 +256,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="UI" type="Control" parent="." index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -257,10 +274,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 580.0
-margin_top = 74.0
-margin_right = 676.0
-margin_bottom = 138.0
+margin_left = 880.0
+margin_top = 37.0
+margin_right = 944.0
+margin_bottom = 101.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -275,9 +292,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="score" type="Label" parent="UI/ScoreTexture" index="0"]
 
@@ -285,10 +299,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 108.0
-margin_top = 20.0
-margin_right = 148.0
-margin_bottom = 60.0
+margin_left = 75.0
+margin_top = 13.0
+margin_right = 115.0
+margin_bottom = 53.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -297,7 +311,6 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.069046, 0.153778, 0.707031, 1 )
-text = "0"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -308,15 +321,15 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 [node name="ComboTexture" type="Label" parent="UI" index="1"]
 
 editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 393.0
-margin_top = 514.0
-margin_right = 1018.0
-margin_bottom = 765.0
-rect_scale = Vector2( 0.6, 0.6 )
+margin_left = 98.0
+margin_top = 143.0
+margin_right = 723.0
+margin_bottom = 394.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -330,10 +343,7 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors" ]
-__meta__ = {
-"_edit_group_": true
-}
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="combo" type="Label" parent="UI/ComboTexture" index="0"]
 
@@ -342,9 +352,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 692.0
-margin_top = 21.0
-margin_right = 848.0
-margin_bottom = 272.0
+margin_top = 33.0
+margin_right = 830.0
+margin_bottom = 284.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -431,19 +441,30 @@ stretch_mode = 0
 [node name="start_trigger" type="Timer" parent="." index="6"]
 
 process_mode = 1
-wait_time = 1.0
+wait_time = 2.5
 one_shot = true
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="start_trigger" index="0"]
 
 root_node = NodePath("..")
-autoplay = ""
+autoplay = "play"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
+anims/play = SubResource( 7 )
 blend_times = [  ]
-autoplay = ""
+autoplay = "play"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="start_trigger" index="1"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="timeout" from="start_trigger" to="." method="on_start"]
 
