@@ -126,7 +126,7 @@ tracks/0/keys = {
 [node name="player" type="Node2D"]
 
 script = ExtResource( 1 )
-is_lead = false
+score = 0.0
 
 [node name="body" type="Sprite" parent="." index="0"]
 

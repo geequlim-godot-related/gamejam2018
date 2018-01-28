@@ -19,6 +19,7 @@ signal lead_right
 signal lead_head
 
 signal clear_key_level
+signal combo_disposed
 
 signal block
 

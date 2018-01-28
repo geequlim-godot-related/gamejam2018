@@ -123,9 +123,10 @@ tracks/0/keys = {
 "values": [ ExtResource( 8 ), ExtResource( 5 ) ]
 }
 
-[node name="player" type="Node2D" index="0"]
+[node name="player" type="Node2D"]
 
 script = ExtResource( 1 )
+score = 0.0
 
 [node name="body" type="Sprite" parent="." index="0"]
 
