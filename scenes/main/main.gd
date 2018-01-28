@@ -14,12 +14,16 @@ func _ready():
 	level.connect("add_score", self, "_on_add_score")
 	global.connect("clear_key_level", self, "_on_add_score", [0])
 	global.connect("block", self, "show_block")
+	global.connect("finished", self, "_on_finished")
+	global.connect("combo_disposed", self, "combo_disposed")
 	connect("action_button_pressed", self, "on_button_pressed")
 	get_node("UI/Restart").connect("pressed", level, "restart")
+	
 
 # 开始关卡
 func on_start():
 	level.start()
+
 
 func _process(delta):
 	level.process(delta, last_button)
@@ -58,7 +62,10 @@ func _on_add_score(addition):
 		get_node("Effect").play_effect(EffectView.EffectLevel.Bad)
 	if addition > 0:
 		print(level.Utils.time_to_expression(level.time), " 按下了: ", last_button, " 加分:", addition, " 总分:", level.score, ' 进度:', level.get_progress(),' 连击:', level.combo)
-		
+
+func _on_finished():
+	print("game over", level)
+
 func show_block():
 	var block = get_node("block").duplicate()
 	add_child(block)
@@ -70,3 +77,5 @@ func free_block(animation ,block):
 	remove_child(block)
 	block.free()
 	
+func combo_disposed():
+	level.combo = 0

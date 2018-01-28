@@ -19,10 +19,14 @@ signal lead_right
 signal lead_head
 
 signal clear_key_level
+signal combo_disposed
+
+signal finished
 
 signal block
 
 func _init():
+	_bgm_player.connect("finished", self, "emit_signal", ["finished"])
 	add_child(_bgm_player)
 
 
