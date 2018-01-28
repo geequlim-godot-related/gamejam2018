@@ -88,7 +88,7 @@ use_filter = false
 font_data = ExtResource( 13 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="main" type="Control" index="0"]
+[node name="main" type="Control"]
 
 pause_mode = 1
 material = ExtResource( 1 )
