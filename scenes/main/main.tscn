@@ -87,7 +87,7 @@ use_filter = false
 font_data = ExtResource( 12 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="main" type="Control"]
+[node name="main" type="Control" index="0"]
 
 pause_mode = 1
 material = ExtResource( 1 )
@@ -126,15 +126,7 @@ expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material" ]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
-
-stream = null
-volume_db = 0.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[node name="Time" type="Label" parent="." index="2"]
+[node name="Time" type="Label" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -153,8 +145,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="players" type="Control" parent="." index="3"]
+[node name="players" type="Control" parent="." index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -215,7 +208,7 @@ scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 0.7
 
-[node name="block" type="Node2D" parent="." index="4"]
+[node name="block" type="Node2D" parent="." index="3"]
 
 editor/display_folded = true
 visible = false
@@ -239,7 +232,7 @@ blend_times = [  ]
 autoplay = ""
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="UI" type="Control" parent="." index="5"]
+[node name="UI" type="Control" parent="." index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -420,5 +413,24 @@ size_flags_vertical = 1
 texture = ExtResource( 15 )
 expand = true
 stretch_mode = 0
+
+[node name="start_trigger" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="start_trigger" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[connection signal="timeout" from="start_trigger" to="." method="on_start"]
 
 
