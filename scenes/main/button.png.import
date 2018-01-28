@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo.png-374b793e6c2ad87485e73f1a95942e18.stex"
+path="res://.import/button.png-2b18e8d1f5778f24ebcb6a6236a8b567.stex"
 
 [deps]
 
-source_file="res://assets/bg/logo.png"
-source_md5="67f3321699286999a2a58b22b4b28bd9"
+source_file="res://scenes/main/button.png"
+source_md5="3ec79d5cf69d65bf8166502f88ba6319"
 
-dest_files=[ "res://.import/logo.png-374b793e6c2ad87485e73f1a95942e18.stex" ]
-dest_md5="270452a59e2b24bbb09204aa009fd8a5"
+dest_files=[ "res://.import/button.png-2b18e8d1f5778f24ebcb6a6236a8b567.stex" ]
+dest_md5="a140535ced477eaac4e3687f662b1054"
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -1,5 +1,5 @@
 const Constants = preload("./constants.gd")
-const ACCEPT_DURATION = 0.333
+const ACCEPT_DURATION = 0.16
 const SCORE = 100
 
 var time = 0
@@ -58,12 +58,14 @@ func process(p_time, btn):
 	return 0
 	
 func calculate_score(p_time_offset):
-	if p_time_offset <= 0.02:
+	if p_time_offset <= ACCEPT_DURATION / 8.0:
 		return SCORE
-	elif p_time_offset <= 0.06:
+	elif p_time_offset <= ACCEPT_DURATION / 5.0:
 		return SCORE/2
-	elif p_time_offset <= 0.1:
+	elif p_time_offset <= ACCEPT_DURATION / 3.0:
 		return SCORE/4
+	elif p_time_offset <= ACCEPT_DURATION:
+		return SCORE / 5
 	else:
 		return 0
 

@@ -1,23 +1,25 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://shader/color_shader.tres" type="Material" id=1]
 [ext_resource path="res://scenes/main/main.gd" type="Script" id=2]
-[ext_resource path="res://assets/bg/bg.jpg" type="Texture" id=3]
-[ext_resource path="res://scenes/main/player/player2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/main/player/player7.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/main/player/player6.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/main/player/player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/main/player/player4.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/main/player/player5.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/main/player/player3.tscn" type="PackedScene" id=10]
-[ext_resource path="res://icon.png" type="Texture" id=11]
-[ext_resource path="res://fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=12]
-[ext_resource path="res://fonts/cyrillic_pixel-7.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://fonts/Kemco Pixel Bold.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://assets/bg/pdq.png" type="Texture" id=15]
-[ext_resource path="res://scenes/main/effect.gd" type="Script" id=16]
-[ext_resource path="res://scenes/main/popup.tscn" type="PackedScene" id=17]
-[ext_resource path="res://sfx/237476__ofuscapreto__laser-falling.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/bg/ads.png" type="Texture" id=3]
+[ext_resource path="res://assets/bg/bg.jpg" type="Texture" id=4]
+[ext_resource path="res://scenes/main/player/player2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/main/player/player7.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/main/player/player6.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/main/player/player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/main/player/player4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/main/player/player5.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/main/player/player3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/main/button_bg.png" type="Texture" id=12]
+[ext_resource path="res://scenes/main/button.png" type="Texture" id=13]
+[ext_resource path="res://fonts/advanced_pixel-7.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://fonts/cyrillic_pixel-7.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://fonts/Kemco Pixel Bold.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://assets/bg/pdq.png" type="Texture" id=17]
+[ext_resource path="res://scenes/main/effect.gd" type="Script" id=18]
+[ext_resource path="res://scenes/main/popup.tscn" type="PackedScene" id=19]
+[ext_resource path="res://sfx/237476__ofuscapreto__laser-falling.wav" type="AudioStream" id=20]
 
 [sub_resource type="Animation" id=1]
 
@@ -55,7 +57,7 @@ tracks/1/keys = {
 size = 40
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 12 )
+font_data = ExtResource( 14 )
 _sections_unfolded = [ "Font", "Resource", "Settings" ]
 
 [sub_resource type="DynamicFont" id=3]
@@ -63,7 +65,7 @@ _sections_unfolded = [ "Font", "Resource", "Settings" ]
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 13 )
+font_data = ExtResource( 15 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -71,7 +73,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 250
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 12 )
+font_data = ExtResource( 14 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -79,7 +81,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 size = 200
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 14 )
+font_data = ExtResource( 16 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=6]
@@ -87,7 +89,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 20
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 12 )
+font_data = ExtResource( 14 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=7]
@@ -158,24 +160,34 @@ __meta__ = {
 "_edit_horizontal_guides_": [ 538.538 ]
 }
 
-[node name="bg" type="TextureRect" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 468.578, 317.06 )
+scale = Vector2( 2.82401, 4.34121 )
+texture = ExtResource( 3 )
+
+[node name="bg" type="TextureRect" parent="." index="1"]
 
 material = ExtResource( 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -148.0
+margin_top = -34.0
+margin_right = 222.0
+margin_bottom = 174.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Material" ]
 
-[node name="Time" type="Label" parent="." index="1"]
+[node name="Time" type="Label" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -194,17 +206,18 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="players" type="Control" parent="." index="2"]
+[node name="players" type="Control" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 25.0
-margin_top = 8.0
-margin_right = 761.0
-margin_bottom = 339.0
-rect_scale = Vector2( 1.2, 1.2 )
+margin_left = -75.0
+margin_top = -19.0
+margin_right = 779.0
+margin_bottom = 365.0
+rect_scale = Vector2( 1.5, 1.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -215,63 +228,74 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="左1" parent="players" index="0" instance=ExtResource( 4 )]
+[node name="左1" parent="players" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 280.533, 333.618 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 0.6
 
-[node name="左2" parent="players" index="1" instance=ExtResource( 5 )]
+[node name="左2" parent="players" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 350.911, 336.305 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 0.4
 
-[node name="左3" parent="players" index="2" instance=ExtResource( 6 )]
+[node name="左3" parent="players" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 428.585, 334.162 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 0.2
 
-[node name="player" parent="players" index="3" instance=ExtResource( 7 )]
+[node name="player" parent="players" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 511.163, 335.664 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="右3" parent="players" index="4" instance=ExtResource( 8 )]
+[node name="右3" parent="players" index="4" instance=ExtResource( 9 )]
 
 position = Vector2( 601.736, 338.349 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 0.3
 
-[node name="右2" parent="players" index="5" instance=ExtResource( 9 )]
+[node name="右2" parent="players" index="5" instance=ExtResource( 10 )]
 
 position = Vector2( 666.839, 337.375 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 0.5
 
-[node name="右1" parent="players" index="6" instance=ExtResource( 10 )]
+[node name="右1" parent="players" index="6" instance=ExtResource( 11 )]
 
 position = Vector2( 737.625, 339.724 )
 scale = Vector2( 3, 3 )
 _sections_unfolded = [ "Transform" ]
 score = 0.7
 
-[node name="block" type="Node2D" parent="." index="3"]
+[node name="Sprite2" type="Sprite" parent="." index="4"]
 
+position = Vector2( 168.334, 774.898 )
+rotation = 1.5708
+scale = Vector2( 2.35058, 5.34286 )
+texture = ExtResource( 12 )
+offset = Vector2( -173.075, 8.4653 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="block" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
 visible = false
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="block" index="0"]
 
-position = Vector2( 90.9446, -33.2592 )
-texture = ExtResource( 11 )
+position = Vector2( 99.0228, -26.328 )
+scale = Vector2( 4.42742, 4.42742 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="block" index="1"]
@@ -286,7 +310,7 @@ blend_times = [  ]
 autoplay = ""
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="UI" type="Control" parent="." index="4"]
+[node name="UI" type="Control" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -359,16 +383,15 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 [node name="ComboTexture" type="Label" parent="UI" index="1"]
 
 editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 390.0
-margin_top = 530.0
-margin_right = 1015.0
-margin_bottom = 781.0
-rect_scale = Vector2( 0.7, 0.7 )
+margin_left = 420.0
+margin_top = 570.0
+margin_right = 1045.0
+margin_bottom = 821.0
+rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -467,19 +490,19 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -1.0
-margin_top = 572.0
+margin_top = 543.0
 margin_right = 245.0
-margin_bottom = 582.0
+margin_bottom = 614.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 15 )
+texture = ExtResource( 17 )
 expand = true
 stretch_mode = 0
 
-[node name="Effect" type="Control" parent="." index="5"]
+[node name="Effect" type="Control" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -492,7 +515,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 16 )
+script = ExtResource( 18 )
 
 [node name="ShakeEffect" type="AnimationPlayer" parent="Effect" index="0"]
 
@@ -505,9 +528,9 @@ anims/play = SubResource( 7 )
 blend_times = [  ]
 autoplay = ""
 
-[node name="Control" parent="Effect" index="1" instance=ExtResource( 17 )]
+[node name="Control" parent="Effect" index="1" instance=ExtResource( 19 )]
 
-[node name="start_trigger" type="Timer" parent="." index="6"]
+[node name="start_trigger" type="Timer" parent="." index="8"]
 
 editor/display_folded = true
 process_mode = 1
@@ -528,7 +551,7 @@ autoplay = "play"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="start_trigger" index="1"]
 
-stream = ExtResource( 18 )
+stream = ExtResource( 20 )
 volume_db = 0.0
 autoplay = true
 max_distance = 2000.0
