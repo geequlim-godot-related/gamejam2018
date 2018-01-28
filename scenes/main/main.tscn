@@ -50,7 +50,7 @@ tracks/1/keys = {
 
 [sub_resource type="DynamicFont" id=2]
 
-size = 40
+size = 60
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 12 )
@@ -88,7 +88,7 @@ use_filter = false
 font_data = ExtResource( 12 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="main" type="Control"]
+[node name="main" type="Control" index="0"]
 
 pause_mode = 1
 material = ExtResource( 1 )
@@ -113,10 +113,8 @@ __meta__ = {
 
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -153,13 +151,20 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 38.0
+margin_top = 6.0
+margin_right = 940.0
+margin_bottom = 512.0
+rect_scale = Vector2( 1.2, 1.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="左1" parent="players" index="0" instance=ExtResource( 4 )]
 
@@ -235,7 +240,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="UI" type="Control" parent="." index="4"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -253,10 +257,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 880.0
-margin_top = 37.0
-margin_right = 944.0
-margin_bottom = 101.0
+margin_left = 580.0
+margin_top = 74.0
+margin_right = 676.0
+margin_bottom = 138.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -271,6 +275,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="score" type="Label" parent="UI/ScoreTexture" index="0"]
 
@@ -278,10 +285,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 75.0
-margin_top = 13.0
-margin_right = 115.0
-margin_bottom = 53.0
+margin_left = 108.0
+margin_top = 20.0
+margin_right = 148.0
+margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -290,6 +297,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.069046, 0.153778, 0.707031, 1 )
+text = "0"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -300,15 +308,15 @@ _sections_unfolded = [ "custom_colors", "custom_fonts" ]
 [node name="ComboTexture" type="Label" parent="UI" index="1"]
 
 editor/display_folded = true
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 98.0
-margin_top = 143.0
-margin_right = 723.0
-margin_bottom = 394.0
+margin_left = 393.0
+margin_top = 514.0
+margin_right = 1018.0
+margin_bottom = 765.0
+rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
@@ -322,7 +330,10 @@ valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="combo" type="Label" parent="UI/ComboTexture" index="0"]
 
@@ -331,9 +342,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 692.0
-margin_top = 33.0
-margin_right = 830.0
-margin_bottom = 284.0
+margin_top = 21.0
+margin_right = 848.0
+margin_bottom = 272.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
