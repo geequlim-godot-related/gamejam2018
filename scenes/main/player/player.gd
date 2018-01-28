@@ -21,10 +21,13 @@ func process_action(act):
     pass
 
 func play_left():
+	get_node("l_leg_player").playback_speed = 5
 	get_node("l_leg_player").play("play")
 	
 func play_right():
+	get_node("r_leg_player").playback_speed = 5
 	get_node("r_leg_player").play("play")
 	
 func play_head():
+	get_node("head_player").playback_speed = 5
 	get_node("head_player").play("play")
